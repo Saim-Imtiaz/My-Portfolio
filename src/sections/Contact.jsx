@@ -12,7 +12,7 @@ const contactItems = [
     {
         icon: <FaPhone className="text-[#24b5d9] text-xl" />,
         title: 'Phone',
-        value: '+92 901 937 7152',
+        value: '+92 301 937 7152',
     },
     {
         icon: <FaMapMarkerAlt className="text-[#24b5d9] text-xl" />,
