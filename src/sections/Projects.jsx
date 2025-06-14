@@ -2,7 +2,7 @@ import { CodeBracketIcon, EyeIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import aiImageGenerator from '../assets/projects/ai-image-generator.png';
 import chatApp from '../assets/projects/chat-app.png';
-import emp from '../assets/projects/employee-managment-system.png';
+import vi from '../assets/projects/vi.png';
 import hba from '../assets/projects/hotel-booking-app.png';
 
 function Projects() {
@@ -10,28 +10,28 @@ function Projects() {
     {
       title: "AI Image Generator",
       description: "Web application that generates custom AI images based on user prompts",
-      tags: ["React", "Node.js", "Mongo DB", "ExpressJS", "Clip Drop API", "Tailwind"],
+      tags: ["React", "Node.js", "Mongo DB", "ExpressJS", "Clip Drop API", "Cloudinary", "Tailwind CSS"],
       image: aiImageGenerator,
       demoUrl: "https://ai-image-generator-frontend-liard.vercel.app"
     },
     {
       title: "Realtime Chat App",
       description: "Realtime Chat App for exchange on messages and media.",
-      tags: ["React", "Node JS", "Mongo DB", "Express JS", "Tailwind"],
+      tags: ["React", "Node JS", "Mongo DB", "Express JS", "Tailwind CSS", "Cloudinary"],
       image: chatApp,
       demoUrl: "https://chat-app-frontend-gray.vercel.app/login"
     },
     {
-      title: "Employee Management System",
-      description: "HR system for tracking employee records and performance (Enter email: admin@me.com and password: 123 for admin panel and add email:e@e.com or employee'2,3,4,5'@example.com and passeord:123 for employee panel)",
-      tags: ["React", "Tailwind"],
-      image: emp,
-      demoUrl: "https://employ-managment-system-react.vercel.app"
+      title: "Virtual Assistant",
+      description: "Users can chat with the assistant to get instant answers, perform calculations, fetch weather updates and get helpful suggestions. It supports real-time interaction and is designed for both productivity and fun.",
+      tags: ["React", "Express Js", "Node Js", "Mongo DB", "Gemini API", "Cloudinary", "Tailwind CSS"],
+      image: vi,
+      demoUrl: "https://virtual-assistant-si.vercel.app"
     },
     {
       title: "Hotel Booking App",
       description: "Platform for browsing and booking hotel rooms.",
-      tags: ["React", "Node.js", "Express JS", "Mongo DB", "clerk"],
+      tags: ["React", "Node.js", "Express JS", "Mongo DB", "clerk", "Cloudinary", "Tailwind CSS"],
       image: hba,
       demoUrl: "#"
     }
