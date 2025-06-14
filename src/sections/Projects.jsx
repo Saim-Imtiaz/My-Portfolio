@@ -9,14 +9,14 @@ function Projects() {
   const projects = [
     {
       title: "AI Image Generator",
-      description: "Web application that generates custom AI images based on user prompts",
+      description: "A web application that creates custom AI-generated images from user prompts, allowing users to input text and receive unique visuals powered by advanced artificial intelligence models.",
       tags: ["React", "Node.js", "Mongo DB", "ExpressJS", "Clip Drop API", "Cloudinary", "Tailwind CSS"],
       image: aiImageGenerator,
       demoUrl: "https://ai-image-generator-frontend-liard.vercel.app"
     },
     {
       title: "Realtime Chat App",
-      description: "Realtime Chat App for exchange on messages and media.",
+      description: "A Realtime Chat App that allows users to send and receive messages instantly, share media files, and stay connected with others through a smooth and responsive chat interface.",
       tags: ["React", "Node JS", "Mongo DB", "Express JS", "Tailwind CSS", "Cloudinary"],
       image: chatApp,
       demoUrl: "https://chat-app-frontend-gray.vercel.app/login"
@@ -30,7 +30,7 @@ function Projects() {
     },
     {
       title: "Hotel Booking App",
-      description: "Platform for browsing and booking hotel rooms.",
+      description: "A platform for browsing and booking hotel rooms with ease. Users can explore listings, view details, check availability, and securely reserve rooms based on location, budget, and preferences.",
       tags: ["React", "Node.js", "Express JS", "Mongo DB", "clerk", "Cloudinary", "Tailwind CSS"],
       image: hba,
       demoUrl: "#"
