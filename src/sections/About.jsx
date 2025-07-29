@@ -71,7 +71,7 @@ function About() {
         </motion.div>
 
         <motion.div 
-          className="space-y-8 text-gray-300 text-lg leading-relaxed"
+          className="space-y-8 text-gray-400 text-lg leading-relaxed"
           variants={container}
         >
           <motion.p 

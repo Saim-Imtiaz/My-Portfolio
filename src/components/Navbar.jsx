@@ -13,41 +13,41 @@ function Navbar() {
       setIsScrolled(window.scrollY > 100);
     };
 
-    // Use passive scroll listener for better performance
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Simplified variants
   const containerVariants = {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: 0.05, // Reduced stagger time
+        staggerChildren: 0.05,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: -10 }, // Reduced movement
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        type: 'tween', // Changed to tween for better performance
+    hidden: { opacity: 0, y: -10 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'tween',
         ease: 'easeOut',
-        duration: 0.3
-      } 
+        duration: 0.3,
+      },
     },
   };
+
+  const linkClasses =
+    'text-inherit no-underline visited:text-inherit focus:text-cyan-400 active:text-cyan-400';
 
   return (
     <>
       <div className="h-20" />
 
-      {/* Fixed Navbar */}
       <div className="fixed top-4 left-0 w-full z-50 flex justify-center pointer-events-none">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -55,21 +55,21 @@ function Navbar() {
           transition={{ duration: 0.4, ease: 'easeOut' }}
           className={`flex items-center justify-between px-6 md:px-10 w-[90%] max-w-6xl py-3 rounded-full shadow-md transition-colors duration-300 pointer-events-auto
             ${isScrolled ? 'bg-white/90' : 'bg-black/30'} 
-            ${isScrolled ? 'backdrop-blur-sm' : ''}`} // Reduced blur when scrolled
+            ${isScrolled ? 'backdrop-blur-sm' : ''}`}
         >
-          {/* Logo or Brand */}
+          {/* Logo */}
           <motion.div
-            className={`text-lg font-bold ${isScrolled ? 'text-gray-900' : 'text-white'} bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent`}
+            className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'} bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.1 }}
           >
-            <a href="#Home">CH.dev</a>
+            <a href="#Home" className={linkClasses}>CH.dev</a>
           </motion.div>
 
           {/* Desktop Nav */}
           <motion.ul
-            className="hidden md:flex gap-6 text-sm font-medium" // Reduced gap
+            className="hidden md:flex gap-[50px] text-sm font-medium"
             variants={containerVariants}
             initial="hidden"
             animate="show"
@@ -78,29 +78,42 @@ function Navbar() {
               <motion.li
                 key={item}
                 variants={itemVariants}
-                whileHover={{ scale: 1.1, color: '#22d3ee' }} // Simplified hover
-                whileTap={{ scale: 0.98 }} // Reduced tap effect
-                className={`relative cursor-pointer transition-colors duration-200 
-                  ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+                whileHover={{ scale: 1.1, color: '#22d3ee' }}
+                whileTap={{ scale: 0.98 }}
+                className={`relative cursor-pointer transition-colors duration-200 group ${
+                  isScrolled ? 'text-gray-900' : 'text-white'
+                }`}
               >
-                <a href={`#${item}`}>{item}</a>
+                <a
+  href={`#${item}`}
+  className="no-underline transition-colors duration-200"
+  style={{ color: isScrolled ? '#111827' : '#ffffff' }} // Tailwind's gray-900 or white
+>
+  {item}
+</a>
+
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-cyan-400 group-hover:w-full transition-all duration-200" />
               </motion.li>
             ))}
           </motion.ul>
 
-          {/* Mobile Toggle Button */}
-          <div className="md:hidden text-2xl cursor-pointer">
+          {/* Mobile Toggle */}
+          <button
+            onClick={toggleMenu}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+            className="md:hidden text-2xl cursor-pointer"
+          >
             {isOpen ? (
-              <HiX onClick={toggleMenu} className={`${isScrolled ? 'text-gray-900' : 'text-white'}`} />
+              <HiX className={isScrolled ? 'text-gray-900' : 'text-white'} />
             ) : (
-              <HiOutlineMenuAlt3 onClick={toggleMenu} className={`${isScrolled ? 'text-gray-900' : 'text-white'}`} />
+              <HiOutlineMenuAlt3 className={isScrolled ? 'text-gray-900' : 'text-white'} />
             )}
-          </div>
+          </button>
         </motion.div>
       </div>
 
-      {/* Mobile Menu - Simplified */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -118,10 +131,15 @@ function Navbar() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ type: 'tween', ease: 'easeOut', duration: 0.2 }}
-                  whileHover={{ color: '#22d3ee' }} // Removed scale on hover
+                  whileHover={{ color: '#22d3ee' }}
                   className="py-2 transition-colors duration-200"
                 >
-                  <a href={`#${item}`}>{item}</a>
+                  <a
+                    href={`#${item}`}
+                    className={linkClasses}
+                  >
+                    {item}
+                  </a>
                 </motion.li>
               ))}
             </ul>
