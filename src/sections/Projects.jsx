@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import aiImageGenerator from '../assets/projects/ai-image-generator.png';
 import chatApp from '../assets/projects/chat-app.png';
 import vi from '../assets/projects/vi.png';
-import hba from '../assets/projects/hotel-booking-app.png';
+import scw from '../assets/projects/school-webs.png';
 
 function Projects() {
   const projects = [
@@ -29,12 +29,12 @@ function Projects() {
       demoUrl: "https://virtual-assistant-si.vercel.app"
     },
     {
-      title: "Hotel Booking App",
-      description: "A platform for browsing and booking hotel rooms with ease. Users can explore listings, view details, check availability, and securely reserve rooms based on location, budget, and preferences.",
-      tags: ["React", "Node.js", "Express JS", "Mongo DB", "clerk", "Cloudinary", "Tailwind CSS"],
-      image: hba,
-      demoUrl: "#"
-    }
+      "title": "School Website",
+      "description": "A comprehensive school management platform featuring AI Chatbot, Online Admission, School Information, Certificate Generation System, and others.",
+      "tags": ["React", "Node.js", "Express JS", "Mongo DB", "Tailwind CSS", "JWT Auth",],
+      "image": scw,
+      "demoUrl": "https://gmhsno1.com"
+  }
   ];
 
   return (
